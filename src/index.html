@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Images search</title>
-    <link rel="stylesheet" href="./css/styles.css" />
-  </head>
-  <body>
-    <load ="partials/header.html" />
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Images search</title>
+        <link rel="stylesheet" href="./css/styles.css" />
+    </head>
+    <body>
+        <load ="partials/header.html" />
 
-    <p style="display: none;" class="loading">Loading images, please wait...</p>
+        <div class="container"></div>
 
-    <div class="container"></div>
+        <p style="display: none" class="loading">
+            Loading images, please wait...
+        </p>
 
-    <script type="module" src="./main.js"></script>
-  </body>
+        <button id="load-more" style="display: none">Load more</button>
+
+        <script type="module" src="./main.js"></script>
+    </body>
 </html>
