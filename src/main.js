@@ -88,23 +88,23 @@ function renderPhotos(photos) {
 function getPhotoHtml({webformatURL, largeImageURL, tags, likes, views, comments, downloads}) {
     return `
     <a href="${largeImageURL}">
-    <div>
+    <div class="card">
     <img src="${webformatURL}" alt="${tags}">
 <ul class="photo_details">
 <li>
-<span>Likes</span><br>
+<span class="photo_details_paragraph">Likes</span><br>
 <span>${likes}</span>
 </li>
 <li>
-<span>Views</span><br>
+<span class="photo_details_paragraph">Views</span><br>
 <span>${views}</span>
 </li>
 <li>
-<span>Comments</span><br>
+<span class="photo_details_paragraph">Comments</span><br>
 <span>${comments}</span>
 </li>
 <li>
-<span>Downloads</span><br>
+<span class="photo_details_paragraph">Downloads</span><br>
 <span>${downloads}</span>
 </li>
 </ul>
