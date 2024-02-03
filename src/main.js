@@ -90,7 +90,7 @@ function getPhotoHtml({webformatURL, largeImageURL, tags, likes, views, comments
     <a href="${largeImageURL}">
     <div>
     <img src="${webformatURL}" alt="${tags}">
-<ul>
+<ul class="photo_details">
 <li>
 <span>Likes</span><br>
 <span>${likes}</span>
