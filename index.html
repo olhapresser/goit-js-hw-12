@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/goit-js-hw-11/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Images search</title>
-    
-    <script type="module" crossorigin src="/goit-js-hw-11/commonHelpers.js"></script>
-    <link rel="modulepreload" crossorigin href="/goit-js-hw-11/assets/vendor-46aac873.js">
-    <link rel="stylesheet" href="/goit-js-hw-11/assets/vendor-eb6030bc.css">
-    <link rel="stylesheet" href="/goit-js-hw-11/assets/index-75103046.css">
-  </head>
-  <body>
-    <header class="header">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/goit-js-hw-11/favicon.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Images search</title>
+        
+      <script type="module" crossorigin src="/goit-js-hw-11/commonHelpers.js"></script>
+      <link rel="modulepreload" crossorigin href="/goit-js-hw-11/assets/vendor-b52d9f5e.js">
+      <link rel="stylesheet" href="/goit-js-hw-11/assets/vendor-eb6030bc.css">
+      <link rel="stylesheet" href="/goit-js-hw-11/assets/index-75103046.css">
+    </head>
+    <body>
+        <header class="header">
   <nav class="nav">
    <form class="form" id="form">
     <input type="text" placeholder="Search images..." class="input" name="query">
@@ -22,10 +22,14 @@
 </header>
 
 
-    <p style="display: none;" class="loading">Loading images, please wait...</p>
+        <div class="container"></div>
 
-    <div class="container"></div>
+        <p style="display: none" class="loading">
+            Loading images, please wait...
+        </p>
 
-    
-  </body>
+        <button id="load-more" style="display: none">Load more</button>
+
+        
+    </body>
 </html>
