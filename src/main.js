@@ -1,11 +1,17 @@
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
+
 
 const refs = {
     form: document.querySelector('#form'),
     input: document.querySelector('.input'),
     container: document.querySelector('.container'),
+    loading: document.querySelector('.loading')
 }
+
+const lightbox = new SimpleLightbox('.container a', { /* options */ });
 
 refs.form.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -13,7 +19,17 @@ refs.form.addEventListener('submit', (event) => {
     const form = event.currentTarget;
     const query = form.elements.query.value;
 
-    getPhotos(query).then(handlePhotos).catch(onFetchError).finally(() => form.reset());
+    if (!query.trim()) {
+        return;
+    }
+
+    refs.loading.style.display = 'block';
+
+    getPhotos(query).then(handlePhotos).catch(onFetchError).finally(() => {
+        form.reset();
+
+        refs.loading.style.display = 'none';
+    });
 
 })
     
@@ -50,22 +66,28 @@ function onEmptyResults() {
 
 function handlePhotos(photos) {
     if (photos.length === 0) {
+        refs.container.innerHTML = ''
         return onEmptyResults();
     } 
 
     renderPhotos(photos);
+
+    lightbox.refresh()
 }
 
 function renderPhotos(photos) {
-  const photosHtml =  photos.map((photo) => 
+    const photosHtml = photos.map((photo) =>
         getPhotoHtml(photo)
-    ).join(" ")
+    ).join(" ");
 
-    refs.container.innerHTML(photosHtml)
+    console.log(photosHtml);
+
+    refs.container.innerHTML = photosHtml;
 }
 
 function getPhotoHtml({webformatURL, largeImageURL, tags, likes, views, comments, downloads}) {
     return `
+    <a href="${largeImageURL}">
     <div>
     <img src="${webformatURL}" alt="${tags}">
 <ul>
@@ -87,5 +109,7 @@ function getPhotoHtml({webformatURL, largeImageURL, tags, likes, views, comments
 </li>
 </ul>
     </div>
+    </a>
     `
 }
+
