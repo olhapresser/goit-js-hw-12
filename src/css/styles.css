@@ -48,8 +48,7 @@ line-height: 24px;
 letter-spacing: 0.04em;
 text-align: left;
 height: 100%;
-
-  transition: background-color ease-in-out .3s;
+transition: background-color ease-in-out .3s;
 }
 
 .submit_button:hover{
@@ -114,3 +113,9 @@ justify-content: space-evenly;
   font-weight:bold;
 }
 
+.load_more{
+margin-top: 20px;
+margin-left: 50%;
+margin-right: 50%;
+min-width: 115px;
+}
